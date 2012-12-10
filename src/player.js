@@ -147,12 +147,20 @@ _V_.Player = _V_.Component.extend({
       for (var c,i=0,j=this.tag.childNodes;i<j.length;i++) {
         c = j[i];
         if (c.nodeName.toLowerCase() == "source") {
-          options.sources.push({
-            src: c[getAttribute]('src'),
-            type: c[getAttribute]('type'),
-            media: c[getAttribute]('media'),
-            title: c[getAttribute]('title')
-          });
+			var source = {};
+			source["src"] = c.getAttribute("src");
+			source["type"] = c.getAttribute("type");
+			source["media"] = c.getAttribute("media");
+            source["title"] = c.getAttribute("title");
+
+            for (var k = 0; k < c.attributes.length; k++) {
+                var attribute = c.attributes[k];
+                if (attribute.name.match("^data-")) {
+                    source[attribute.name] = c.getAttribute(attribute.name)
+                }
+            }
+
+            options.sources.push(source);
         }
         if (c.nodeName.toLowerCase() == "track") {
           options.tracks.push({
