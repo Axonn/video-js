@@ -1,0 +1,36 @@
+.vjs-controls .vjs-share-button div
+{
+    width:auto;
+    background:url("http://rc-video-encoding-samples.s3.amazonaws.com/videojsPluginTests/share.png") no-repeat scroll 7px 0px transparent;
+}
+
+.vjs-controls .vjs-share-button .vjs-menu-item
+{
+    padding: 0px 0px 0px 0.4em;
+    height: 1.4em;
+}
+
+.vjs-controls .vjs-share-button .vjs-menu-item img
+{
+    float:left;
+    margin-top:0.2em;
+}
+
+.vjs-controls .vjs-share-button .vjs-share-network
+{
+    margin-left:0.3em;
+    margin-top:0.2em;
+    background:none;
+    float:left;
+}
+
+.vjs-controls .vjs-share-button .vjs-menu
+{
+    width:9.0em;
+    left:-6em;
+}
+
+.vjs-controls .vjs-share-button .vjs-menu-item
+{
+    height:1.7em;
+}

@@ -1,0 +1,10 @@
+.vjs-controls .vjs-quality-button div
+{
+    width:auto;
+    background-image:none;
+}
+
+.vjs-controls .vjs-quality-button .vjs-menu
+{
+    width:6.5em;
+}
