@@ -13,7 +13,7 @@
             https: "https://logs.loggly.com"
         };
         var logglySrc = logglyPaths[protocol];
-        this.key = "3e53bbf5-2443-4561-b75b-a8d59956310b";
+        this.key = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxxx";
         this.config = {
             url: logglySrc + '/inputs/' + this.key,
             level: 'log'
