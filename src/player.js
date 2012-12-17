@@ -14,6 +14,9 @@ _V_.Player = _V_.Component.extend({
     _V_.merge(options, this.getVideoTagSettings()); // Override with Video Tag Options
     _V_.merge(options, addOptions); // Override/extend with options from setup call
 
+    // Cache for video property values.
+    this.values = {};
+
     // Store controls setting, and then remove immediately so native controls don't flash.
     tag.removeAttribute("controls");
 
@@ -62,9 +65,6 @@ _V_.Player = _V_.Component.extend({
         }
       }
     }
-
-    // Cache for video property values.
-    this.values = {};
 
     this.addClass("vjs-paused");
 
@@ -569,7 +569,7 @@ _V_.Player = _V_.Component.extend({
     if (num !== undefined) {
 
       // Cache on object to be returned. Shouldn't have any effect after CSS.
-      this.el[widthOrHeight] = num;
+      this.values[widthOrHeight] = num;
 
       // Check if using percent width/height and adjust
       if ((""+num).indexOf("%") !== -1) {
@@ -585,7 +585,7 @@ _V_.Player = _V_.Component.extend({
 
     // Returns cached width/height in attribute.
     // Could make this return computed width and support %s. Not a small amount of work.
-    return parseInt(this.el.getAttribute(widthOrHeight));
+    return this.values[widthOrHeight];
   },
 
   // Check if current tech can support native fullscreen (e.g. with built in controls lik iOS, so not our flash swf)
