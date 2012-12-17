@@ -35,7 +35,6 @@ _V_.GoogleAnalyticsTracker = _V_.Class.extend({
             player.addEvent("changeres", _V_.proxy(this, window.utils.bind(this.reportQualityChange, this)));
 
             $(window).on("beforeunload", window.utils.bind(this.reportLoadingDuration, this));
-            $(window).on("beforeunload", window.utils.bind(this.reportVideoDepartTime, this));
 
             player.addEvent("seeked", _V_.proxy(this, window.utils.bind(this.setSeekedState, this)));
             player.addEvent("timeupdate", _V_.proxy(this, window.utils.bind(this.reportPlayedPoint, this)));
@@ -93,11 +92,6 @@ _V_.GoogleAnalyticsTracker = _V_.Class.extend({
     reportLoadingDuration: function () {
         var time = this.player.loadingTimer.getTime() * 1000;
         _gaq.push(['_trackTiming', this.category, "LoadingDuration", time, this.title, 100]);
-    },
-
-    reportVideoDepartTime: function () {
-        var time = this.player.currentTime() * 1000;
-        _gaq.push(['_trackTiming', this.category, "TimeAtDepart", time, this.title, 100]);
     },
 
     reportQualityChange: function () {
