@@ -48,8 +48,15 @@ goog.exportProperty(vjs.Component.prototype, 'hide', vjs.Component.prototype.hid
 goog.exportProperty(vjs.Component.prototype, 'width', vjs.Component.prototype.width);
 goog.exportProperty(vjs.Component.prototype, 'height', vjs.Component.prototype.height);
 goog.exportProperty(vjs.Component.prototype, 'dimensions', vjs.Component.prototype.dimensions);
+goog.exportProperty(vjs.Component.prototype, 'lockShowing', vjs.Component.prototype.lockShowing);
+goog.exportProperty(vjs.Component.prototype, 'unlockShowing', vjs.Component.prototype.unlockShowing);
+goog.exportProperty(vjs.Component.prototype, 'options', vjs.Component.prototype.options);
 
 goog.exportSymbol('videojs.Player', vjs.Player);
+goog.exportProperty(vjs.Player.prototype, 'currentTime', vjs.Player.prototype.currentTime);
+goog.exportProperty(vjs.Player.prototype, 'src', vjs.Player.prototype.src);
+goog.exportProperty(vjs.Player.prototype, 'play', vjs.Player.prototype.play);
+goog.exportProperty(vjs.Player.prototype, 'currentSrc', vjs.Player.prototype.currentSrc);
 
 goog.exportSymbol('videojs.MediaLoader', vjs.MediaLoader);
 goog.exportSymbol('videojs.PosterImage', vjs.PosterImage);
